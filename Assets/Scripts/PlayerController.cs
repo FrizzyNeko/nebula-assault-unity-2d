@@ -16,8 +16,10 @@ public class PlayerController : MonoBehaviour
 
     // Bileþenler ve Deðiþkenler
     InputAction moveAction;
+    InputAction fireAction;
     SpriteRenderer spriteRenderer;
     Camera mainCamera;
+    Shooter playerShooter;
 
     // Viewport köþeleri olacak
     Vector2 minBounds;
@@ -43,6 +45,23 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        fireAction = InputSystem.actions.FindAction("Fire");
+        if (fireAction == null)
+        {
+            Debug.LogError("Fire InputAction bulunamadý!");
+            enabled = false;
+            return;
+        }
+
+        // Shooter
+        playerShooter = GetComponent<Shooter>();
+        if (playerShooter == null)
+        {
+            Debug.LogError("Shooter bulunamadý!");
+            enabled = false;
+            return;
+        }
+
         // Camera
         mainCamera = Camera.main;
         if (mainCamera == null)
@@ -51,6 +70,7 @@ public class PlayerController : MonoBehaviour
             enabled = false;
             return;
         }
+
     }
 
     void OnEnable()
@@ -71,6 +91,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        FireShooter();
     }
 
     void InitBounds()
@@ -105,4 +126,11 @@ public class PlayerController : MonoBehaviour
 
         transform.position = newPos;
     }
+
+    void FireShooter()
+    {
+        playerShooter.isFiring = fireAction.IsPressed();
+    }
+
+
 }

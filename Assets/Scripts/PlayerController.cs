@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 newPos = transform.position + deltaMove;
 
-        // Sprite'ýn gerçek dünya boyutlarý (pivot baðýmsýz)
+        // Sprite'ýn gerçek dünya boyutlarý
         float halfWidth = spriteRenderer.bounds.extents.x;
         float halfHeight = spriteRenderer.bounds.extents.y;
 

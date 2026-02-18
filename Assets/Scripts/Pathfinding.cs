@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Pathfinding : MonoBehaviour
@@ -6,6 +7,8 @@ public class Pathfinding : MonoBehaviour
     WaveConfigSO waveConfig;
     Transform[] waypoints;
     int waypointIndex = 0;
+    
+    
 
     void Awake()
     {

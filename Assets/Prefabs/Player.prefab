@@ -144,7 +144,7 @@ MonoBehaviour:
   extraPaddingLeft: 0
   extraPaddingRight: 0
   extraPaddingUp: 7
-  extraPaddingDown: 0
+  extraPaddingDown: 2
 --- !u!50 &-8106877217665191078
 Rigidbody2D:
   serializedVersion: 5
@@ -220,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c44c370672f6e749b014a8d172db2c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  isPlayer: 0
+  scoreValue: 50
   health: 100
   hitParticles: {fileID: 6033069305196434863, guid: 773f2781d299e4940aa799e6d57ffa1f, type: 3}
   applyCameraShake: 1

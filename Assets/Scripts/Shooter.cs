@@ -25,7 +25,7 @@ public class Shooter : MonoBehaviour
     {
         if (useAI) isFiring = true;
     }
-    // test
+
     private void Update()
     {
         Fire();
